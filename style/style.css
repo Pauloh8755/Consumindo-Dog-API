@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+h1{
+    /* background-color: black; */
+    width: 500px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 3rem;
+}
+body{
+    background-color: #ffc833;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: calibri;
+}
+header{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+/* header .fundo{
+    width: 700px;
+    height: 80px;
+    border-radius: 50px;
+    background-color: black;
+    position: relative;
+} */
+header img{
+    width: 500px;
+    position: absolute;
+    
+}
+
+main{
+    min-height: 500px;
+    max-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.pesquisa-container{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pesquisa-container input{
+    width: 80%;
+    height: 50px;
+    color: black;
+    font-size: 1.7rem;
+    border-radius: 30px;
+    outline: none;
+    border: 0;
+    padding:0  24px;
+}
+/* Aplicando display flex para que os itens-galeria deixem de se comportarem 
+    como display inline e passem a obedecer sua altura e largura*/
+.container-galeria{
+    display: flex;
+    gap: 10px;
+    /* quebrar para segunda linha quando atingir seu limite*/
+    flex-wrap: wrap;
+    padding: 30px;
+    
+    
+}
+.itens-galeria{
+    width: 340px;
+    height: 240px;
+    flex-grow: 1;
+    /* border: 3px solid #eb4034; */
+    border-radius: 5px;
+    transition: all .3s;
+    /* border: 2px solid black; */
+}
+.itens-galeria:hover{
+    transform: scale(1.12);
+    z-index: 15;
+}
+.itens-galeria img{
+    width: 100%;
+    height: 100%;
+    /* define comportamento da imagem */
+    object-fit: cover;
+    transition: all .3s;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #0006;
+    
+}
+.itens-galeria img:hover{
+    filter:  grayscale(0%);
+    
+}
+.slide{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -9999;
+    opacity: 0;
+    transition: opacity .5s;
+}
+.slide:target{
+    z-index: 999;
+    opacity: 1;
+}
+.slide .container-imagem{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.slide .container-imagem img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slide .fechar{
+    position:absolute;
+    top:0;
+    right:0;
+    color: white;
+    background-color: brown;
+    width: 40px;
+    height: 40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    z-index: 3;
+}
+.slide .fechar:hover{
+    cursor: pointer;
+}
+.slide .anterior,.proximo{
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: black;
+    opacity: 0;
+    transition: all .5s linear;
+}
+.slide .navegacao:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.slide .anterior{
+    left: 0;
+    background-image: linear-gradient(to left, #fff0, #fff5, #fff7);
+}
+.slide .proximo{
+    right: 0;
+    background-image: linear-gradient(to right, #fff0, #fff5, #fff7);
+}
+footer{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
